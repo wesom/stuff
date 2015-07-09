@@ -1,4 +1,3 @@
-#include <lauxlib.h>
 #include <stdlib.h>
 /**
  *  * Note: The returned array must be malloced, assume caller calls free().
@@ -86,6 +85,8 @@ int* twoSum(int* nums, int numsSize, int target) {
 }
 
 //----------------------- for lua ------------------
+
+#include <lauxlib.h>
 
 int ltwosum(lua_State *L) {
 	luaL_checktype(L, 1, LUA_TTABLE);
