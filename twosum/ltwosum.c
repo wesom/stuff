@@ -96,7 +96,7 @@ int ltwosum(lua_State *L) {
 	int i;
 	for (i = 0; i < numsSize; i++) {
 		lua_rawgeti(L, 1, i+1);
-		nums[i] = lua_tonumber(L, -1);
+		nums[i] = lua_tointeger(L, -1);
 		lua_pop(L, 1);
 	}
 	int *result = twoSum(nums, numsSize, target);
