@@ -46,7 +46,6 @@ static void map_put(struct hashmap *m, int key, int value) {
     if (p == NULL) {
 	p = malloc(sizeof(*p));
 	p->key = key;
-	p->value = value;
 	p->link = m->buckets[i];
 	m->buckets[i] = p;
     }
@@ -62,6 +61,7 @@ static void map_free(struct hashmap *m) {
 	    free(p);
 	}
     }
+    free(m);
 }
 
 int* twoSum(int* nums, int numsSize, int target) {
